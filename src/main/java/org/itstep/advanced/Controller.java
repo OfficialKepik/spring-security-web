@@ -30,4 +30,4 @@ public class Controller {
     public String common() {
         return "common";
     }
-} 
+}
