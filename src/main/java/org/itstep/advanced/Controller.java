@@ -1,26 +1,33 @@
-package org.itstep;
+package org.itstep.advanced;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
 
-    @GetMapping("/admin")
-    @PreAuthorize("hasAnyRole('ADMIN')")
-    public String admin() {
-        return "admin";
+    @GetMapping("/root")
+    public String root() {
+        return "root";
+    }
+
+    @GetMapping("/root/1")
+    public String root1() {
+        return "root 1";
     }
 
     @GetMapping("/user")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public String user() {
         return "user";
     }
 
-    @GetMapping("/demo")
+    @GetMapping("/guest")
     public String demo() {
         return "demo";
     }
-}
+
+    @GetMapping("/common")
+    public String common() {
+        return "common";
+    }
+} 
